@@ -32,6 +32,10 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
                     <input className='w-full rounded-md' type="text" id='title' {...register('title')} />
                 </div>
                 <div className='flex flex-col gap-1 mb-4'>
+                    <label htmlFor="assigned">Assigned</label>
+                    <input className='w-full rounded-md' type="text" id='assigned' {...register('assigned')} />
+                </div>
+                <div className='flex flex-col gap-1 mb-4'>
                     <label htmlFor="description">Description</label>
                     <textarea className='w-full rounded-md' id="description" cols="30" rows="3" {...register('description')}></textarea>
                 </div>

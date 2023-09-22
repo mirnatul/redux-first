@@ -1,7 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    tasks: [],
+    tasks: [
+        {
+            id: 1,
+            title: 'test 1',
+            description: 'des 1',
+            status: 'pending',
+            assigned: 'lipon'
+        }
+    ],
+    userTasks: []
 }
 
 const tasksSlice = createSlice({
@@ -26,6 +35,9 @@ const tasksSlice = createSlice({
         updateStatus: (state, { payload }) => {
             const target = state.tasks.find(item => item.id === payload.id)
             target.status = payload.status
+        },
+        userTasks: (state, { payload }) => {
+            state.userTasks = state.tasks.filter(item => item.assigned === payload)
         }
     }
 })
